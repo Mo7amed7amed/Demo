@@ -1,0 +1,25 @@
+﻿@model Demo.Models.Course
+
+    <div class="container">
+
+        <div>
+            <h2>Course Detials</h2>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CrsName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CrsName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CrsId },new { @class="btn btn-primary"}) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+

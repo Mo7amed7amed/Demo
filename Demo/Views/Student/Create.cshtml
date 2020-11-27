@@ -1,0 +1,49 @@
+﻿@model Student
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+<div class="container">
+
+    <h2>Create New Student</h2><br />
+    <form method="post">
+        @Html.LabelFor(a => a.Name)
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Name)
+        <br />
+        @Html.LabelFor(a => a.Age)
+        @Html.TextBoxFor(a => a.Age, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Age)
+        <br />
+        @Html.LabelFor(a => a.Email)
+        @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Email)
+        <br />
+        @Html.LabelFor(a => a.UserName)
+        @Html.TextBoxFor(a => a.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.UserName)
+        <br />
+        @Html.LabelFor(a => a.Password)
+        @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Password)
+        <br />
+        @Html.LabelFor(a => a.ConfirmPassword)
+        @Html.PasswordFor(a => a.ConfirmPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.ConfirmPassword)
+        <br />
+        @Html.LabelFor(a => a.PhoneNumber)
+        @Html.TextBoxFor(a => a.PhoneNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.PhoneNumber)
+        <br />
+        @Html.LabelFor(a => a.DepartmentId)
+        @Html.DropDownListFor(a => a.DepartmentId, ViewBag.DepartmentId as SelectList, new { @class = "form-control" })
+        <br />
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </form>
+</div>
+@section scripts{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

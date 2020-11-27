@@ -1,0 +1,17 @@
+﻿@model List<Course>
+@{
+    ViewBag.Title = "addcourse";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<h2>addcourse</h2>
+<form method="post">
+    @foreach (var item in Model)
+    {
+        <input type="checkbox" value="@item.CrsId" name="course" />@item.CrsName
+        <br />
+    }
+    <br />
+    <input type="submit" value="add" />
+</form>
+

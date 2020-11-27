@@ -1,0 +1,46 @@
+﻿@model List<Student>
+    <div class="container">
+        <h2>Student List </h2>
+         @Html.ActionLink("Add New Student", "Create", "Student", null, new { @class = "btn btn-primary" })
+        <hr />
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>UserName</th>
+                    @*<th>Phone</th>*@
+                    <th>Department</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.stdId</td>
+                            <td>@item.Name</td>
+                            <td>@item.Age</td>
+                            <td>@item.Email</td>
+                            <td>@item.UserName</td>
+                            @*<td>@item.PhoneNumber</td>*@
+                            <td>@item.Department.DeptName</td>
+                            <td>
+                                <a href="/Student/Details/@item.stdId" class="btn btn-primary">Details</a>|<a href="/Student/Delete/@item.stdId" class="btn btn-danger">Delete</a>|<a href="/Student/Edit/@item.stdId" class="btn btn-info">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr class="bg-danger">
+                        <td colspan="7">Number of Student is Zero </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
