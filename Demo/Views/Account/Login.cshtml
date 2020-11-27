@@ -1,0 +1,29 @@
+﻿@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+<div class="container">
+
+    <h2>Login</h2>
+    <form method="post">
+        @Html.ValidationSummary(true)
+        <br />
+        @Html.TextBoxFor(a => a.Email, new { placeholder = "Email" })
+        @Html.ValidationMessageFor(a => a.Email)<br />
+
+        @Html.PasswordFor(a => a.Password, new { placeholder = "password" })
+        @Html.ValidationMessageFor(a => a.Password)
+        <br />
+        <input type="submit" value="add" class="btn btn-primary" />
+        @Html.ActionLink("Signup", "Create", "Student", null, new { @class = "btn btn-danger" })
+    </form>
+
+    @section scripts{
+
+        <script src="~/Scripts/jquery.validate.js"></script>
+
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    }
+</div>
+

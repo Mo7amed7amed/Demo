@@ -7,10 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Demo.Models;
+using Demo.My_Filters;
 
 namespace Demo.Controllers
 {
-    [AllowAnonymous]
+    [MyAuthorizeFilter]
     public class CourseController : Controller
     {
         private ITIModel db = new ITIModel();
@@ -19,7 +20,6 @@ namespace Demo.Controllers
        
         public ActionResult Index()
         {
-            //int x = int.Parse("ffff");
             return View(db.Courses.ToList());
         }
 
